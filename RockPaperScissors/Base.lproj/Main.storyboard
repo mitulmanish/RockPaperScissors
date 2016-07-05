@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,122 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rW2-0l-b95">
+                                <rect key="frame" x="252" y="136" width="96" height="328"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWt-b3-6Rt" userLabel="Rock">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="89Q-zD-NWT"/>
+                                            <constraint firstAttribute="width" secondItem="JWt-b3-6Rt" secondAttribute="height" multiplier="1:1" id="I5N-UN-6a4"/>
+                                            <constraint firstAttribute="width" constant="96" id="KUJ-2x-9HI"/>
+                                        </constraints>
+                                        <state key="normal" image="Rock"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m7K-wU-lPr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcV-6I-d2j" userLabel="Paper">
+                                        <rect key="frame" x="0.0" y="116" width="96" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="RcV-6I-d2j" secondAttribute="height" multiplier="1:1" id="LJw-1k-arh"/>
+                                            <constraint firstAttribute="width" constant="96" id="czr-Zr-6Rd"/>
+                                            <constraint firstAttribute="height" constant="96" id="g6d-Lb-A3A"/>
+                                        </constraints>
+                                        <state key="normal" image="Paper"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Sw-h1-Yt2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-SF-8LQ" userLabel="Scissor">
+                                        <rect key="frame" x="0.0" y="232" width="96" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7E1-SF-8LQ" secondAttribute="height" multiplier="1:1" id="7yX-YH-RAe"/>
+                                            <constraint firstAttribute="width" constant="96" id="V8f-lX-BC6"/>
+                                            <constraint firstAttribute="height" constant="96" id="j0b-hI-LhQ"/>
+                                        </constraints>
+                                        <state key="normal" image="Scissors"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8TK-p2-uUY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rW2-0l-b95" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Pu-IV-hTG"/>
+                            <constraint firstItem="rW2-0l-b95" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4pT-En-bCF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="AdH-Q0-aR7" kind="presentation" identifier="result" modalPresentationStyle="overFullScreen" id="c46-aW-t31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="178" y="229"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="67l-o2-38S">
+            <objects>
+                <viewController id="AdH-Q0-aR7" customClass="ResultViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JcH-eY-oqj"/>
+                        <viewControllerLayoutGuide type="bottom" id="QJa-5J-wx8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="3kc-cy-rJu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScissorsCutPaper" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-3m-Ooc">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KIM-6T-xHR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zNW-NF-oPm">
+                                <rect key="frame" x="28" y="65" width="544" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Z7-hS-ZHC">
+                                <rect key="frame" x="283" y="434" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backToMain:" destination="AdH-Q0-aR7" eventType="touchUpInside" id="Ows-X3-5nb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n4r-3m-Ooc" firstAttribute="top" secondItem="JcH-eY-oqj" secondAttribute="bottom" constant="180" id="HOg-aM-P11"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zNW-NF-oPm" secondAttribute="trailing" constant="8" id="Ilc-25-QT2"/>
+                            <constraint firstItem="zNW-NF-oPm" firstAttribute="centerX" secondItem="n4r-3m-Ooc" secondAttribute="centerX" id="OGS-Lx-FXZ"/>
+                            <constraint firstItem="1Z7-hS-ZHC" firstAttribute="top" secondItem="n4r-3m-Ooc" secondAttribute="bottom" constant="34" id="Sjp-gV-F8l"/>
+                            <constraint firstItem="n4r-3m-Ooc" firstAttribute="centerY" secondItem="3kc-cy-rJu" secondAttribute="centerY" id="UcB-pp-dCm"/>
+                            <constraint firstItem="1Z7-hS-ZHC" firstAttribute="centerX" secondItem="n4r-3m-Ooc" secondAttribute="centerX" id="fUH-eh-MHI"/>
+                            <constraint firstItem="n4r-3m-Ooc" firstAttribute="top" secondItem="zNW-NF-oPm" secondAttribute="bottom" constant="100" id="ksu-cY-zS4"/>
+                            <constraint firstItem="n4r-3m-Ooc" firstAttribute="centerX" secondItem="3kc-cy-rJu" secondAttribute="centerX" id="mOG-LK-yQK"/>
+                            <constraint firstItem="zNW-NF-oPm" firstAttribute="leading" secondItem="3kc-cy-rJu" secondAttribute="leadingMargin" constant="8" id="oJ6-8v-YhC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImage" destination="n4r-3m-Ooc" id="u73-LV-cXh"/>
+                        <outlet property="summaryLabel" destination="zNW-NF-oPm" id="tQy-WG-kUt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kew-Fk-0w5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="229"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Paper" width="96" height="96"/>
+        <image name="Rock" width="96" height="96"/>
+        <image name="Scissors" width="96" height="96"/>
+        <image name="ScissorsCutPaper" width="800" height="600"/>
+    </resources>
 </document>
