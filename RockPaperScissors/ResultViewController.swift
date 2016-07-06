@@ -15,14 +15,13 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     
     @IBOutlet weak var resultImage: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(userSelection)
         
         let decision = decisionBox(userSelection, computerSelection: randomValue())
-        print(decision.summary)
-        print(decision.imageString)
+    
         setUpResults(decision)
     }
     
@@ -30,7 +29,7 @@ class ResultViewController: UIViewController {
         self.summaryLabel.text = decision.0
         self.resultImage.image = UIImage(named: decision.1)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,42 +41,43 @@ class ResultViewController: UIViewController {
         }
     }
     
-    func decisionBox(userSelection: Int, computerSelection: Int) -> (summary: String, imageString: String) {
-        
-        let selection = (userSelection, computerSelection)
-        var decision: (String, String) = (summary: "",imageString: "")
-        
-        switch(selection) {
-        case (1,1):
-            decision.0 = "Computer also selected Stone"
-            decision.1 = "tie"
-        case (2,2):
-            decision.0 = "Computer also selected Paper"
-            decision.1 = "tie"
-        case (3,3):
-            decision.0 = "Computer also selected Scissors"
-            decision.1 = "tie"
-        case (1,2):
-            decision.0 = "Computer selected Paper. You lost"
-            decision.1 = "PaperCoversRock"
-        case (2,1):
-            decision.0 = "Computer selected Stone. You win"
-            decision.1 = "PaperCoversRock"
-        case (1,3):
-            decision.0 = "Computer selected Scissors. You win"
-            decision.1 = "RockCrushesScissors"
-        case (3,1):
-            decision.0 = "Computer selected Stone. You lost"
-            decision.1 = "RockCrushesScissors"
-        case (3,2):
-            decision.0 = "Computer selected Paper. You win"
-            decision.1 = "ScissorsCutPaper"
-        case (2,3):
-            decision.0 = "Computer selected Scissors.You lost"
-            decision.1 = "ScissorsCutPaper"
-        default: break
-        }
-        return decision
+    func decisionBox(userSelection: Int, computerSelection: Int) ->
+        (summary: String, imageString: String) {
+            
+            let selection = (userSelection, computerSelection)
+            var decision: (summary: String, imageString: String) = (summary: "", imageString: "")
+            
+            switch(selection) {
+            case (1,1):
+                decision.summary = "Computer also selected Stone"
+                decision.imageString = "tie"
+            case (2,2):
+                decision.summary = "Computer also selected Paper"
+                decision.imageString = "tie"
+            case (3,3):
+                decision.summary = "Computer also selected Scissors"
+                decision.imageString = "tie"
+            case (1,2):
+                decision.summary = "Computer selected Paper. You lost"
+                decision.imageString = "PaperCoversRock"
+            case (2,1):
+                decision.summary = "Computer selected Stone. You win"
+                decision.imageString = "PaperCoversRock"
+            case (1,3):
+                decision.summary = "Computer selected Scissors. You win"
+                decision.imageString = "RockCrushesScissors"
+            case (3,1):
+                decision.summary = "Computer selected Stone. You lost"
+                decision.imageString = "RockCrushesScissors"
+            case (3,2):
+                decision.summary = "Computer selected Paper. You win"
+                decision.imageString = "ScissorsCutPaper"
+            case (2,3):
+                decision.summary = "Computer selected Scissors.You lost"
+                decision.imageString = "ScissorsCutPaper"
+            default: break
+            }
+            return decision
     }
     
     
@@ -89,15 +89,4 @@ class ResultViewController: UIViewController {
         return Int(randomValue)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

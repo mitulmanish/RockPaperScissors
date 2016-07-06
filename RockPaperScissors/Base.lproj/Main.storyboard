@@ -60,11 +60,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5N-lN-3KC">
+                                <rect key="frame" x="28" y="58" width="544" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rW2-0l-b95" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Pu-IV-hTG"/>
                             <constraint firstItem="rW2-0l-b95" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4pT-En-bCF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V5N-lN-3KC" secondAttribute="trailing" constant="8" id="ABr-4o-6CZ"/>
+                            <constraint firstItem="JWt-b3-6Rt" firstAttribute="top" secondItem="V5N-lN-3KC" secondAttribute="bottom" constant="42" id="Ued-XP-N16"/>
+                            <constraint firstItem="V5N-lN-3KC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="iaU-Ig-Uau"/>
+                            <constraint firstItem="V5N-lN-3KC" firstAttribute="centerX" secondItem="JWt-b3-6Rt" secondAttribute="centerX" id="ufc-EC-ekx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -100,8 +110,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Z7-hS-ZHC">
-                                <rect key="frame" x="283" y="434" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
+                                <rect key="frame" x="265" y="434" width="71" height="30"/>
+                                <state key="normal" title="Play Again"/>
                                 <connections>
                                     <action selector="backToMain:" destination="AdH-Q0-aR7" eventType="touchUpInside" id="Ows-X3-5nb"/>
                                 </connections>
